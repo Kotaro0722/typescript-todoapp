@@ -2,8 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
+import { type } from "os";
 
-const Alert = ({ visible, errorText }) => {
+type AlertProps = {
+  visible: boolean;
+  errorText: string;
+};
+
+const Alert = ({ visible, errorText }: AlertProps) => {
   return (
     <StyledContent $visible={visible}>
       <StyledText>{errorText}</StyledText>
@@ -29,7 +35,7 @@ const StyledContent = styled.div<StyledContentProps>`
   transform: translateX(-50%) translateY(-40px);
   opacity: 0;
 
-  ${props =>
+  ${(props) =>
     props.$visible &&
     `
     transform: translateX(-50%) translateY(0);

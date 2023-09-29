@@ -5,16 +5,16 @@ import TEXT from "../../../variables/texts";
 import Checkbox from "../../Atoms/Checkbox";
 import EditButton from "../../Atoms/EditButton";
 import Input from "../../Atoms/Input";
+import { string } from "prop-types";
 
 const Task = ({
-  onTaskNameChange,
-  onTaskComplete,
-  taskName = "",
-  defaultIsEditing = false,
+  taskName: string,
+  defaultIsEditing: boolean,
+  onTaskNameChange:(value:string)=>void,
+  onTaskComplete:()=>void,
 }) => {
-  const [isEditing, setIsEditing] = useState(defaultIsEditing);
-
-  const onEditComplete = value => {
+  const [isEditing, setIsEditing] = useState<boolean>(defaultIsEditing);
+  const onEditComplete = (value: string) => {
     setIsEditing(false);
     onTaskNameChange(value);
   };

@@ -3,7 +3,11 @@ import pencil from "../../../assets/svg/pencil.svg";
 import styled from "styled-components";
 import COLOR from "../../../variables/color";
 
-const EditButton = ({ onClick }) => {
+type EditButtonProps = {
+  onClick: () => void;
+};
+
+const EditButton = ({ onClick }: EditButtonProps) => {
   return (
     <StyledButton onClick={onClick}>
       <img src={pencil} />

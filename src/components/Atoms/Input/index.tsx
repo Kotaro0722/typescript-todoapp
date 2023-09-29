@@ -4,9 +4,9 @@ import COLOR from "../../../variables/color";
 import TEXT from "../../../variables/texts";
 
 interface InputProps {
-  onEditComplete: (value: any) => void;
-  defaultValue?: any;
-} /*anyåž‹*/
+  onEditComplete: (value: string) => void;
+  defaultValue?: string;
+} /*anyåž?*/
 
 const Input = ({ onEditComplete, defaultValue = "" }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
